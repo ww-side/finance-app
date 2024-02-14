@@ -1,0 +1,8 @@
+.searchBarWrapper {
+  display: flex;
+  align-items: flex-end;
+}
+
+.searchIcon {
+  margin: 1px 6px 1px 0;
+}
