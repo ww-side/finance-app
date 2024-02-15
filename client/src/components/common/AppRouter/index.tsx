@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import HomePage from "@/pages/HomePage";
 import NotFoundPage from "@/pages/NotFoundPage";
 import RootLayout from "@/components/layouts/RootLayout";
+import QuotePage from "@/pages/QuotePage";
 
 const AppRouter = () => {
   return (
@@ -12,6 +13,14 @@ const AppRouter = () => {
           element={
             <RootLayout>
               <HomePage />
+            </RootLayout>
+          }
+        />
+        <Route
+          path="/quote/:ticker"
+          element={
+            <RootLayout>
+              <QuotePage />
             </RootLayout>
           }
         />

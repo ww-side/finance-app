@@ -1,0 +1,17 @@
+.detailsChip {
+  margin-bottom: 6px;
+}
+
+.table {
+  width: 200px;
+  padding: 10px;
+  border: 1px #dadada solid;
+  border-radius: 10px;
+}
+
+.tableRow {
+  padding: 8px 0;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px #dadada solid;
+}
