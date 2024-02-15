@@ -1,12 +1,15 @@
 import { makeAutoObservable } from "mobx";
 
-interface MarketTrendsModel {
+interface FiltersModel {
   selectedTrend: string;
+  searchQuery: string;
   setSelectedTrend(trend: string): void;
+  setSearchQuery(query: string): void;
 }
 
-class MarketTrendsStore implements MarketTrendsModel {
+class FiltersStore implements FiltersModel {
   selectedTrend = "all";
+  searchQuery = "";
 
   constructor() {
     makeAutoObservable(this);
@@ -15,7 +18,10 @@ class MarketTrendsStore implements MarketTrendsModel {
   setSelectedTrend(trend: string) {
     this.selectedTrend = trend;
   }
+
+  setSearchQuery(query: string) {
+    this.searchQuery = query;
+  }
 }
 
-const marketTrendsStore = new MarketTrendsStore();
-export default marketTrendsStore;
+export const filtersStore = new FiltersStore();
