@@ -8,3 +8,8 @@ export type QuoteType = {
   yield: string;
   last_trade_time: Date;
 };
+
+export type QuoteDetailsType = {
+  title: string;
+  value: string;
+};
