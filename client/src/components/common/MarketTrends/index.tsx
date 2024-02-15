@@ -1,23 +1,22 @@
 import { observer } from "mobx-react-lite";
 import { Box, Chip } from "@mui/material";
-import marketTrendsStore from "@/store/marketTrends.ts";
+import { filtersStore } from "@/store/filters.ts";
 import MovingIcon from "@mui/icons-material/Moving";
 import TrendingDownIcon from "@mui/icons-material/TrendingDown";
 import ListIcon from "@mui/icons-material/List";
+import st from "./styles.module.css";
 
 const MarketTrends = observer(() => {
   const handleTrendChange = (trend: string) => {
-    marketTrendsStore.setSelectedTrend(trend);
+    filtersStore.setSelectedTrend(trend);
   };
 
   const setColor = (trendType: string) => {
-    return marketTrendsStore.selectedTrend === trendType
-      ? "primary"
-      : "default";
+    return filtersStore.selectedTrend === trendType ? "primary" : "default";
   };
 
   return (
-    <Box>
+    <Box className={st.markerTrends}>
       <Chip
         icon={<MovingIcon />}
         label="Gainers"
