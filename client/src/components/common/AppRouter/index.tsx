@@ -3,6 +3,7 @@ import HomePage from "@/pages/HomePage";
 import NotFoundPage from "@/pages/NotFoundPage";
 import RootLayout from "@/components/layouts/RootLayout";
 import QuotePage from "@/pages/QuotePage";
+import WatchingListPage from "@/pages/WatchingListPage";
 
 const AppRouter = () => {
   return (
@@ -21,6 +22,14 @@ const AppRouter = () => {
           element={
             <RootLayout>
               <QuotePage />
+            </RootLayout>
+          }
+        />
+        <Route
+          path="/watching-list"
+          element={
+            <RootLayout>
+              <WatchingListPage />
             </RootLayout>
           }
         />
