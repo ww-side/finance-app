@@ -4,11 +4,15 @@ import { QuoteType } from "@/types/quote.ts";
 
 export const useSocketQuotes = () => {
   const [quotes, setQuotes] = useState<QuoteType[]>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
     SocketApi.createConnection();
+    setIsLoading(true);
+
     SocketApi.getQuotes((res) => {
       setQuotes(res);
+      setIsLoading(false);
     });
 
     return () => {
@@ -16,5 +20,5 @@ export const useSocketQuotes = () => {
     };
   }, []);
 
-  return { quotes };
+  return { quotes, isLoading };
 };

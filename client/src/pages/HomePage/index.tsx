@@ -1,13 +1,14 @@
-import QuotesList from "@/components/common/QuotesList";
-import { Box } from "@mui/material";
-import { filtersStore } from "@/store/filters.ts";
-import { useSocketQuotes } from "@/hooks/useSocketQuotes.ts";
 import { observer } from "mobx-react-lite";
-import SearchBar from "@/components/ui/SearchBar";
+import { Blocks } from "react-loader-spinner";
+import { Box, Typography } from "@mui/material";
+import QuotesList from "@/components/common/QuotesList";
 import MarketTrends from "@/components/common/MarketTrends";
+import SearchBar from "@/components/ui/SearchBar";
+import { useSocketQuotes } from "@/hooks/useSocketQuotes.ts";
+import { filtersStore } from "@/store/filters.ts";
 
 const HomePage = observer(() => {
-  const { quotes } = useSocketQuotes();
+  const { quotes, isLoading } = useSocketQuotes();
   const { selectedTrend, searchQuery } = filtersStore;
 
   const filteredAndSortedQuotes = quotes
@@ -33,7 +34,20 @@ const HomePage = observer(() => {
         onSearchChange={(query) => filtersStore.setSearchQuery(query)}
       />
       <MarketTrends />
-      <QuotesList quotes={filteredAndSortedQuotes} />
+      {isLoading ? (
+        <>
+          <Typography variant="body2">Wait a little while</Typography>
+          <Blocks
+            height="100"
+            width="100"
+            color="#4fa94d"
+            ariaLabel="blocks-loading"
+            visible={true}
+          />
+        </>
+      ) : (
+        <QuotesList quotes={filteredAndSortedQuotes} />
+      )}
     </Box>
   );
 });
