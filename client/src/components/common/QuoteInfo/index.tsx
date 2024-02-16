@@ -1,5 +1,5 @@
 import { type FC } from "react";
-import { Box, Breadcrumbs, Link, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import QuoteDetailsTable from "./QuoteDetailsTable";
 import QuoteSummary from "./QuoteSummary";
 import type { QuoteDetailsType, QuoteType } from "@/types/quote.ts";
@@ -13,15 +13,7 @@ const QuoteInfo: FC<{ quote: QuoteType }> = ({ quote }) => {
   ];
 
   return (
-    <>
-      <Breadcrumbs aria-label="breadcrumb">
-        <Link underline="hover" color="inherit" href="/">
-          Home
-        </Link>
-        <Typography color="text.primary">
-          {quote.ticker.toUpperCase()} • {quote.exchange}
-        </Typography>
-      </Breadcrumbs>
+    <Box className={st.quoteInfoWrapper}>
       <Box className={st.quoteInfo}>
         <QuoteSummary
           ticker={quote.ticker}
@@ -32,7 +24,7 @@ const QuoteInfo: FC<{ quote: QuoteType }> = ({ quote }) => {
         />
         <QuoteDetailsTable options={detailsOptions} />
       </Box>
-    </>
+    </Box>
   );
 };
 
