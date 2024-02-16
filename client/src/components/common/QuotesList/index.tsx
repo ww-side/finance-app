@@ -7,17 +7,15 @@ import st from "./styles.module.css";
 
 const QuotesList: FC<{ quotes: QuoteType[] }> = ({ quotes }) => {
   return (
-    <>
-      <Box className={st.listWrapper}>
-        {quotes.length === 0 ? (
-          <Typography variant="h6">
-            We couldn't find any match for your search.
-          </Typography>
-        ) : (
-          quotes.map((quote) => <QuoteItem key={uuid()} quote={quote} />)
-        )}
-      </Box>
-    </>
+    <Box className={st.listWrapper}>
+      {quotes.length === 0 ? (
+        <Typography variant="h6">
+          We couldn't find any match for your result.
+        </Typography>
+      ) : (
+        quotes.map((quote) => <QuoteItem key={uuid()} quote={quote} />)
+      )}
+    </Box>
   );
 };
 

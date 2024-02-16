@@ -10,3 +10,11 @@
 .ticker {
   width: 70px;
 }
+
+.icon {
+  cursor: pointer;
+}
+
+.icon:hover {
+  opacity: 0.5;
+}
