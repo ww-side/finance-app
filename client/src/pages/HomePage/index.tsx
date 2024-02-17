@@ -6,6 +6,7 @@ import MarketTrends from "@/components/common/MarketTrends";
 import SearchBar from "@/components/ui/SearchBar";
 import { useSocketQuotes } from "@/hooks/useSocketQuotes.ts";
 import { filtersStore } from "@/store/filters.ts";
+import ChangeInterval from "@/components/common/ChangeInterval";
 
 const HomePage = observer(() => {
   const { quotes, isLoading } = useSocketQuotes();
@@ -34,6 +35,7 @@ const HomePage = observer(() => {
         onSearchChange={(query) => filtersStore.setSearchQuery(query)}
       />
       <MarketTrends />
+      <ChangeInterval />
       {isLoading ? (
         <>
           <Typography variant="body2">Wait a little while</Typography>

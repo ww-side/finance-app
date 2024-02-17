@@ -1,0 +1,9 @@
+.changeInterval {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.changeIntervalTitle {
+  padding-bottom: 6px;
+}

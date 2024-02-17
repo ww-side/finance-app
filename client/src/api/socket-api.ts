@@ -8,6 +8,10 @@ class SocketApi {
     this.socket = io(import.meta.env.VITE_SERVER_URL);
   }
 
+  static changeInterval(newInterval: number): void {
+    this.socket?.emit("changeInterval", newInterval);
+  }
+
   static getQuotes(callback: (quotes: QuoteType[]) => void): void {
     this.socket?.emit("start");
 

@@ -3,6 +3,9 @@ import QuotesList from "@/components/common/QuotesList";
 import { useSocketQuotes } from "@/hooks/useSocketQuotes.ts";
 import { watchingQuotesStore } from "@/store/watchingQuotes.ts";
 import { Blocks } from "react-loader-spinner";
+import ChangeInterval from "@/components/common/ChangeInterval";
+import Divider from "@mui/material/Divider";
+import st from "./styles.module.css";
 
 const WatchingListPage = () => {
   const { quotes, isLoading } = useSocketQuotes();
@@ -15,6 +18,8 @@ const WatchingListPage = () => {
   return (
     <Box>
       <Typography variant="h5">Your watching list</Typography>
+      <Divider className={st.divider} />
+      <ChangeInterval />
       {isLoading ? (
         <>
           <Typography variant="body2">Wait a little while</Typography>
