@@ -1,6 +1,6 @@
 import { type FC } from "react";
 import { Box } from "@mui/material";
-import QuoteDetailsTable from "./QuoteDetailsTable";
+import QuoteDetails from "./QuoteDetails";
 import QuoteSummary from "./QuoteSummary";
 import type { QuoteDetailsType, QuoteType } from "@/types/quote.ts";
 import st from "./styles.module.css";
@@ -22,7 +22,7 @@ const QuoteInfo: FC<{ quote: QuoteType }> = ({ quote }) => {
           changePercent={quote.change_percent}
           lastTradeTime={quote.last_trade_time}
         />
-        <QuoteDetailsTable options={detailsOptions} />
+        <QuoteDetails options={detailsOptions} />
       </Box>
     </Box>
   );

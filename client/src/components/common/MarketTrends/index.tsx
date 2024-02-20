@@ -18,6 +18,7 @@ const MarketTrends = observer(() => {
   return (
     <Box className={st.markerTrends}>
       <Chip
+        data-testid="gainers-label"
         icon={<MovingIcon />}
         label="Gainers"
         color={setColor("gainers")}
@@ -25,6 +26,7 @@ const MarketTrends = observer(() => {
         onClick={() => handleTrendChange("gainers")}
       />
       <Chip
+        data-testid="losers-label"
         icon={<TrendingDownIcon />}
         label="Losers"
         color={setColor("losers")}
@@ -32,6 +34,7 @@ const MarketTrends = observer(() => {
         onClick={() => handleTrendChange("losers")}
       />
       <Chip
+        data-testid="all-label"
         icon={<ListIcon />}
         label="All"
         color={setColor("all")}

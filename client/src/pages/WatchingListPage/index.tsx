@@ -16,7 +16,7 @@ const WatchingListPage = () => {
   );
 
   return (
-    <Box>
+    <Box data-testid="watching-list-page">
       <Typography variant="h5">Your watching list</Typography>
       <Divider className={st.divider} />
       <ChangeInterval />

@@ -14,7 +14,7 @@ const SearchBar: FC<SearchBarProps> = ({ onSearchChange }) => {
 
   return (
     <Box className={st.searchBarWrapper}>
-      <SearchIcon className={st.searchIcon} />
+      <SearchIcon data-testid="search-icon" className={st.searchIcon} />
       <TextField
         label="Search tickers"
         variant="standard"

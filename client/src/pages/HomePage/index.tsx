@@ -3,10 +3,10 @@ import { Blocks } from "react-loader-spinner";
 import { Box, Typography } from "@mui/material";
 import QuotesList from "@/components/common/QuotesList";
 import MarketTrends from "@/components/common/MarketTrends";
+import ChangeInterval from "@/components/common/ChangeInterval";
 import SearchBar from "@/components/ui/SearchBar";
 import { useSocketQuotes } from "@/hooks/useSocketQuotes.ts";
 import { filtersStore } from "@/store/filters.ts";
-import ChangeInterval from "@/components/common/ChangeInterval";
 
 const HomePage = observer(() => {
   const { quotes, isLoading } = useSocketQuotes();
@@ -30,7 +30,7 @@ const HomePage = observer(() => {
     .sort((a, b) => a.ticker.localeCompare(b.ticker));
 
   return (
-    <Box>
+    <Box data-testid="home-page">
       <SearchBar
         onSearchChange={(query) => filtersStore.setSearchQuery(query)}
       />

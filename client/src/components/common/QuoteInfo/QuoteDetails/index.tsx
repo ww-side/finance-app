@@ -4,7 +4,7 @@ import { Box, Chip, Typography } from "@mui/material";
 import type { QuoteDetailsType } from "@/types/quote.ts";
 import st from "./styles.module.css";
 
-const QuoteDetailsTable: FC<{
+const QuoteDetails: FC<{
   options: QuoteDetailsType[];
 }> = ({ options }) => {
   return (
@@ -20,4 +20,4 @@ const QuoteDetailsTable: FC<{
   );
 };
 
-export default QuoteDetailsTable;
+export default QuoteDetails;

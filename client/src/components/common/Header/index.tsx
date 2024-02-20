@@ -5,8 +5,13 @@ import st from "./styles.module.css";
 
 const Header = () => {
   const book = [
-    { id: uuid(), route: "/", label: "Home" },
-    { id: uuid(), route: "/watching-list", label: "Watching list" },
+    { id: uuid(), dataTestId: "home-link", route: "/", label: "Home" },
+    {
+      id: uuid(),
+      dataTestId: "watching-list-link",
+      route: "/watching-list",
+      label: "Watching list",
+    },
   ];
 
   return (
@@ -18,7 +23,11 @@ const Header = () => {
         <Box className={st.navigation}>
           {book.map((item) => (
             <Typography key={item.id} variant="body1">
-              <Link path={item.route} color="white">
+              <Link
+                path={item.route}
+                dataTestId={item.dataTestId}
+                color="white"
+              >
                 {item.label}
               </Link>
             </Typography>

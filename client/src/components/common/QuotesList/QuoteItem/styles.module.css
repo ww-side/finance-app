@@ -5,6 +5,8 @@
   align-items: center;
   justify-content: space-between;
   width: 500px;
+  text-decoration: none;
+  color: inherit;
 }
 
 .ticker {

@@ -7,14 +7,15 @@ const Link: FC<{
   path: string;
   children: ReactNode;
   color?: "black" | "white";
-}> = ({ path, children, color = "black" }) => {
+  dataTestId?: string;
+}> = ({ path, children, color = "black", dataTestId }) => {
   const linkStyles = cx(st.link, {
     [st.linkBlack]: color === "black",
     [st.linkWhite]: color === "white",
   });
 
   return (
-    <RouterLink className={linkStyles} to={path}>
+    <RouterLink className={linkStyles} to={path} data-testid={dataTestId}>
       {children}
     </RouterLink>
   );
