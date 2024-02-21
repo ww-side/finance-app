@@ -1,5 +1,34 @@
+# Finance App
+- TypeScript
+- React
+- MobX
+- Material UI
+- React testing library, Vitest
 
-# React Test Task
+![PIC](https://images2.imgbox.com/12/cd/ngfreOKi_o.png)
+
+On the home page we have the price, how much the price has fallen and the percentage by which the price has fallen. The fall or rise is indicated by the corresponding prices.  
+
+## Change interval
+![PIC](https://images2.imgbox.com/70/45/ks5PLoUv_o.png)
+Using the "Enter new interval" field, we can change the value of FETCH_INTERVAL on the server and quotes will be updated according to this value. The value is specified by the user in seconds.
+
+## Filters
+We can filter our objects by using the search bar or group: Gainers, Losers or All
+![PIC](https://images2.imgbox.com/88/81/f8NMOJaD_o.png)
+![PIC](https://images2.imgbox.com/49/75/670ED7F6_o.png)
+
+## Watching list
+We can click on the corresponding icon next to the quote to add or remove it from the watch list. Saved quotes are added to the localStorage.
+![PIC](https://images2.imgbox.com/12/da/NXa6zJvt_o.png)
+
+## Quote page
+If we visit the quote and click on it, it will take us to his personal page.
+![PIC](https://images2.imgbox.com/27/1f/jdqkFTrt_o.png)
+
+## Server
+Server was taken from this repository - https://github.com/incodellc/finance-test-task.  
+I changed the change and change_percent logic of the fields to show the change of these fields on the client.
 
 ## Requirements
 
