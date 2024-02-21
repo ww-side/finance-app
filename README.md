@@ -11,6 +11,7 @@ On the home page we have the price, how much the price has fallen and the percen
 
 ## Change interval
 ![PIC](https://images2.imgbox.com/70/45/ks5PLoUv_o.png)
+
 Using the "Enter new interval" field, we can change the value of FETCH_INTERVAL on the server and quotes will be updated according to this value. The value is specified by the user in seconds.
 
 ## Filters
