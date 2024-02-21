@@ -13,7 +13,10 @@ const QuoteInfo: FC<{ quote: QuoteType }> = ({ quote }) => {
   ];
 
   return (
-    <Box className={st.quoteInfoWrapper}>
+    <Box
+      data-testid={`quote-info-${quote.ticker}`}
+      className={st.quoteInfoWrapper}
+    >
       <Box className={st.quoteInfo}>
         <QuoteSummary
           ticker={quote.ticker}
